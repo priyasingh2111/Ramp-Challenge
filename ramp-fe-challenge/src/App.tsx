@@ -64,8 +64,14 @@ export function App() {
             if (newValue === null) {
               return
             }
-
-            await loadTransactionsByEmployee(newValue.id)
+            /* BUG 3 :Adding condition for when emplyeeid is empty*/
+            else if(newValue.id ==="")
+            {
+              loadAllTransactions();
+            }
+            else {
+              await loadTransactionsByEmployee(newValue.id)
+            }
           }}
         />
 
