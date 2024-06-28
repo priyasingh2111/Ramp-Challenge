@@ -85,7 +85,13 @@ export function App() {
           {transactions !== null && (
             <button
               className="RampButton"
-              disabled={paginatedTransactionsUtils.loading}
+              /*disabled={paginatedTransactionsUtils.loading}
+              Bug fix #6 Adding condition if paginated transactions next page is null and length of more transacions is 0 then disable view more button8*/ 
+              disabled={
+                paginatedTransactionsUtils.loading ||
+                !paginatedTransactions?.nextPage ||
+                transactionsByEmployee?.length ==0
+              }
               onClick={async () => {
                 await loadAllTransactions()
               }}
