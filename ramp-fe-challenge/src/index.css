@@ -124,6 +124,7 @@ hr.RampBreak--l {
 
 .RampInputCheckbox--container {
   display: flex;
+  align-items: center; /* Ensure alignment of checkbox and label */
 }
 
 .RampInputCheckbox--label {
@@ -151,7 +152,10 @@ hr.RampBreak--l {
 }
 
 .RampInputCheckbox--input {
-  display: none;
+  /*display: none; CHANGES MADE HERE*/ 
+  position: absolute;
+  opacity: 0;
+  cursor:pointer;
 }
 
 .RampButton {
